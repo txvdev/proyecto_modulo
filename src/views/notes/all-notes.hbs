@@ -1,0 +1,34 @@
+    
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            
+
+                {{#each image}}
+                
+                <div class="col">
+                    <div class="card card-gallery-item h-100 animate__animated animate__fadeInDown">
+                        {{!-- <img src="../../public/img/uploads/ce5027f8-cf12-4f62-9f92-5df6e4e77587.png" alt=""> --}}
+                        <div class="card-img-top todas_imagenes "><img src="{{ path }}"  alt="{{ filename }}"></div>
+                        <div class="card-body card-bg">
+                            <h5 class="card-title">{{ title }}</h5>
+                            <p class="card-text">{{ description }}</p>
+                            {{!-- <p>{{ format(image.created_at)  }}</p> --}}
+                            <a href="/image/{{ _id }}" class="btn btn-primary btn-blue-app">
+                            View 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{else}}
+                <div class="card mx-auto">
+                    <div class="card-body">
+                    <h1>Hola {{user.name}}</h1>
+                    <p clsss="lead">No has creado ninguna nota aún!</p>
+                    <a href="/add" class="btn btn-success btn-block btn-blue-app">Crea Una!</a>
+                    </div>
+                </div>
+                
+                {{/each}}
+
+            
+        </div>
+    

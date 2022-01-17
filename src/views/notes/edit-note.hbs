@@ -1,0 +1,40 @@
+        <div class="row">
+            <div class="col-xs-12">
+                <a class="volver-atras" href="../{{ image._id }}">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+
+                <div class="card card-gallery-item card-edit">
+                    <div class="card-header">
+                        <h1 class="title h4">Editar Nota</h3>
+                    </div>
+                    <div class="card-img-top todas_imagenes"><img src="{{ image.path }}" alt="{{ image.filename }}"></div>
+                    
+                    
+                    <div class="card-body card-b">
+
+                        <form action="/notes/edit-note/{{ image._id }}?_method=PUT" method="POST">
+                            <input type="hidden" name="_method" value="PUT">
+                            <div class="form-group">
+                                <input type="text" name="title" class="form-control" placeholder="Título" 
+                                value="{{ image.title }}">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="description" class="form-control">{{ image.description }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block btn-blue-app" type="submit">
+                                Save
+                            </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
